@@ -132,18 +132,11 @@ const WorkCarousel = () => {
       <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
         <DialogContent className="max-w-4xl max-h-[90vh] p-0">
           {selectedImage && (
-            <div className="relative">
-              <img
-                src={selectedImage.src}
-                alt={selectedImage.alt}
-                className="w-full h-auto max-h-[85vh] object-contain rounded-lg"
-              />
-              <div className="p-4 bg-background/95 backdrop-blur-sm absolute bottom-0 left-0 right-0 rounded-b-lg">
-                <p className="text-center text-sm text-muted-foreground">
-                  {selectedImage.alt}
-                </p>
-              </div>
-            </div>
+            <img
+              src={selectedImage.src}
+              alt={selectedImage.alt}
+              className="w-full h-auto max-h-[85vh] object-contain rounded-lg"
+            />
           )}
         </DialogContent>
       </Dialog>
