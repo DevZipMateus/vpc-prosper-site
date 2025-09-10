@@ -52,6 +52,10 @@ const WorkCarousel = () => {
     {
       src: "/lovable-uploads/11b50531-b388-4e37-a36e-a281b8e78480.png",
       alt: "Manutenção de sistemas HVAC"
+    },
+    {
+      src: "/lovable-uploads/59a0dcd1-ccba-4df2-8058-8923569381f4.png",
+      alt: "Projeto de ambiente climatizado e confortável"
     }
   ];
 
