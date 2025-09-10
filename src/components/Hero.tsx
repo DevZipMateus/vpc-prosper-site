@@ -10,7 +10,7 @@ const Hero = () => {
       });
     }
   };
-  return <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-20 md:pt-16 lg:pt-0">
       {/* Background Gradient */}
       <div className="absolute inset-0 gradient-hero"></div>
       
