@@ -1,10 +1,8 @@
 import React from 'react';
 import { Target, Award, Users, Building } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
-
 const About = () => {
-  return (
-    <section id="about" className="py-20 bg-muted">
+  return <section id="about" className="py-20 bg-muted">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -29,10 +27,10 @@ const About = () => {
               </p>
             </div>
             <div className="bg-gradient-navy-blue rounded-lg p-8 text-white">
-              <blockquote className="text-2xl font-medium mb-4">
+              <blockquote className="text-2xl font-medium mb-4 bg-gray-950 rounded-xl">
                 "VPC Brasil: Construindo o amanhã, hoje."
               </blockquote>
-              <p className="text-blue-light-soft">
+              <p className="text-blue-light-soft text-zinc-950">
                 Nossa missão é garantir que, com Visão, Proteção e Conforto, seus negócios prosperem sem dores de cabeça, liberando você para focar no que faz de melhor.
               </p>
             </div>
@@ -124,8 +122,6 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default About;
