@@ -16,7 +16,7 @@ const Location = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="max-w-2xl mx-auto">
           {/* Contact Information */}
           <div className="space-y-8">
             <Card className="hover-lift">
@@ -91,30 +91,9 @@ const Location = () => {
                 </div>
               </CardContent>
             </Card>
-          </div>
-
-          {/* Map Placeholder */}
-          <div className="relative">
-            <Card className="overflow-hidden">
-              <CardContent className="p-0">
-                <div className="aspect-video bg-gradient-navy-blue flex items-center justify-center text-white relative">
-                  <div className="text-center">
-                    <MapPin className="w-16 h-16 text-gold mx-auto mb-4" />
-                    <h3 className="text-2xl font-bold mb-2">Estamos Aqui</h3>
-                    <p className="text-blue-light-soft">Engenhoca - Niterói, RJ</p>
-                  </div>
-                  
-                  {/* Decorative elements */}
-                  <div className="absolute top-4 left-4 w-3 h-3 bg-gold rounded-full animate-pulse"></div>
-                  <div className="absolute top-8 right-8 w-2 h-2 bg-blue-light rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-                  <div className="absolute bottom-6 left-8 w-4 h-4 bg-gold/50 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
-                  <div className="absolute bottom-4 right-4 w-2 h-2 bg-blue-light/50 rounded-full animate-pulse" style={{ animationDelay: '1.5s' }}></div>
-                </div>
-              </CardContent>
-            </Card>
 
             {/* Service Area Note */}
-            <div className="mt-6 bg-white rounded-lg p-6 border-l-4 border-gold">
+            <div className="bg-white rounded-lg p-6 border-l-4 border-gold">
               <h4 className="text-lg font-bold text-navy mb-2">Área de Atendimento</h4>
               <p className="text-muted-foreground">
                 Atendemos toda a região metropolitana do Rio de Janeiro, incluindo Niterói, São Gonçalo, Rio de Janeiro e cidades adjacentes.
