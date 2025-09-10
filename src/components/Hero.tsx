@@ -1,26 +1,31 @@
 import React from 'react';
 import { ArrowRight, Shield, Eye, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
-  return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Gradient */}
       <div className="absolute inset-0 gradient-hero"></div>
       
       {/* Geometric Shapes */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-20 h-20 bg-gold/20 rounded-full animate-float"></div>
-        <div className="absolute top-40 right-20 w-16 h-16 bg-blue-light/20 rotate-45 animate-float" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute bottom-20 left-20 w-12 h-12 bg-gold/30 rotate-45 animate-float" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute bottom-40 right-10 w-24 h-24 bg-blue-light/15 rounded-full animate-float" style={{ animationDelay: '0.5s' }}></div>
+        <div className="absolute top-40 right-20 w-16 h-16 bg-blue-light/20 rotate-45 animate-float" style={{
+        animationDelay: '1s'
+      }}></div>
+        <div className="absolute bottom-20 left-20 w-12 h-12 bg-gold/30 rotate-45 animate-float" style={{
+        animationDelay: '2s'
+      }}></div>
+        <div className="absolute bottom-40 right-10 w-24 h-24 bg-blue-light/15 rounded-full animate-float" style={{
+        animationDelay: '0.5s'
+      }}></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -40,7 +45,9 @@ const Hero = () => {
           </p>
 
           {/* VPC Pillars */}
-          <div className="grid md:grid-cols-3 gap-6 mb-12 animate-slide-up" style={{ animationDelay: '0.3s' }}>
+          <div className="grid md:grid-cols-3 gap-6 mb-12 animate-slide-up" style={{
+          animationDelay: '0.3s'
+        }}>
             <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 hover-lift">
               <Eye className="w-12 h-12 text-gold mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-2 text-gold">Visão</h3>
@@ -59,22 +66,14 @@ const Hero = () => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up" style={{ animationDelay: '0.6s' }}>
-            <Button 
-              onClick={() => scrollToSection('services')}
-              size="lg"
-              variant="outline"
-              className="bg-transparent border-2 border-gold text-gold hover:bg-gold hover:text-navy font-semibold px-8 py-4 rounded-lg text-lg transition-all duration-300"
-            >
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up" style={{
+          animationDelay: '0.6s'
+        }}>
+            <Button onClick={() => scrollToSection('services')} size="lg" variant="outline" className="bg-transparent border-2 border-gold text-gold hover:bg-gold hover:text-navy font-semibold px-8 py-4 rounded-lg text-lg transition-all duration-300">
               Nossos Serviços
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button 
-              onClick={() => scrollToSection('contact')}
-              variant="outline"
-              size="lg"
-              className="border-2 border-white text-white hover:bg-white hover:text-navy px-8 py-4 rounded-lg text-lg transition-all duration-300"
-            >
+            <Button onClick={() => scrollToSection('contact')} variant="outline" size="lg" className="border-2 border-white text-white hover:text-navy px-8 py-4 rounded-lg text-lg transition-all duration-300 bg-transparent">
               Fale Conosco
             </Button>
           </div>
@@ -87,8 +86,6 @@ const Hero = () => {
           <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
