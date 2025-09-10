@@ -84,7 +84,8 @@ const Header = () => {
           <div className="hidden lg:block">
             <Button 
               onClick={() => scrollToSection('contact')}
-              className="bg-gold hover:bg-gold-dark text-navy font-semibold px-6 py-3 rounded-lg hover-gold"
+              variant="outline"
+              className="bg-transparent border-2 border-gold text-gold hover:bg-gold hover:text-navy font-semibold px-6 py-3 rounded-lg transition-all duration-300"
             >
               Solicitar Orçamento
             </Button>
@@ -116,7 +117,8 @@ const Header = () => {
               <li className="px-6 py-3">
                 <Button 
                   onClick={() => scrollToSection('contact')}
-                  className="w-full bg-gold hover:bg-gold-dark text-navy font-semibold py-3 rounded-lg"
+                  variant="outline"
+                  className="w-full bg-transparent border-2 border-gold text-gold hover:bg-gold hover:text-navy font-semibold py-3 rounded-lg transition-all duration-300"
                 >
                   Solicitar Orçamento
                 </Button>

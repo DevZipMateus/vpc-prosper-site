@@ -124,7 +124,7 @@ const Services = () => {
               const element = document.getElementById('contact');
               if (element) element.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="bg-gold hover:bg-gold-light text-navy font-semibold px-8 py-4 rounded-lg text-lg hover-gold inline-flex items-center"
+            className="bg-transparent border-2 border-gold text-gold hover:bg-gold hover:text-navy font-semibold px-8 py-4 rounded-lg text-lg transition-all duration-300 inline-flex items-center"
           >
             Solicitar Consulta Gratuita
           </button>

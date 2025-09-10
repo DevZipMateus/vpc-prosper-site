@@ -176,7 +176,8 @@ Gostaria de solicitar um orçamento.`;
 
                 <Button
                   type="submit"
-                  className="w-full bg-gold hover:bg-gold-dark text-navy font-semibold py-3 text-lg hover-gold"
+                  variant="outline"
+                  className="w-full bg-transparent border-2 border-gold text-gold hover:bg-gold hover:text-navy font-semibold py-3 text-lg transition-all duration-300"
                 >
                   <Send className="w-5 h-5 mr-2" />
                   Enviar via WhatsApp

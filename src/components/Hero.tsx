@@ -63,7 +63,8 @@ const Hero = () => {
             <Button 
               onClick={() => scrollToSection('services')}
               size="lg"
-              className="bg-gold hover:bg-gold-light text-navy font-semibold px-8 py-4 rounded-lg text-lg hover-gold"
+              variant="outline"
+              className="bg-transparent border-2 border-gold text-gold hover:bg-gold hover:text-navy font-semibold px-8 py-4 rounded-lg text-lg transition-all duration-300"
             >
               Nossos Serviços
               <ArrowRight className="ml-2 h-5 w-5" />
