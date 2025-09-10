@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -7,10 +8,11 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { type CarouselApi } from "@/components/ui/carousel";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 const WorkCarousel = () => {
   const [api, setApi] = useState<CarouselApi>();
-  const [current, setCurrent] = useState(0);
+  const [selectedImage, setSelectedImage] = useState<{src: string, alt: string} | null>(null);
 
   const workImages = [
     {
@@ -64,81 +66,88 @@ const WorkCarousel = () => {
       return;
     }
 
-    // Auto-play functionality - change slide every 3 seconds
+    // Auto-play functionality - change slide every 3 seconds (continues even on hover)
     const interval = setInterval(() => {
       api.scrollNext();
     }, 3000);
 
-    // Update current slide index
-    const onSelect = () => {
-      setCurrent(api.selectedScrollSnap());
-    };
-
-    api.on("select", onSelect);
-    onSelect();
-
     return () => {
       clearInterval(interval);
-      api.off("select", onSelect);
     };
   }, [api]);
 
+  const handleImageClick = (image: {src: string, alt: string}) => {
+    setSelectedImage(image);
+  };
+
   return (
-    <section className="py-16 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
-            Nosso Trabalho em Ação
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Veja nossa equipe especializada executando projetos de infraestrutura com excelência e dedicação
-          </p>
-        </div>
-        
-        <div className="max-w-4xl mx-auto">
-          <Carousel 
-            setApi={setApi}
-            className="w-full"
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-          >
-            <CarouselContent>
-              {workImages.map((image, index) => (
-                <CarouselItem key={index}>
-                  <div className="relative aspect-video rounded-lg overflow-hidden bg-muted">
-                    <img
-                      src={image.src}
-                      alt={image.alt}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="left-4" />
-            <CarouselNext className="right-4" />
-          </Carousel>
+    <>
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
+              Nosso Trabalho em Ação
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Veja nossa equipe especializada executando projetos de infraestrutura com excelência e dedicação
+            </p>
+          </div>
           
-          {/* Slide indicators */}
-          <div className="flex justify-center mt-6 space-x-2">
-            {workImages.map((_, index) => (
-              <button
-                key={index}
-                className={`w-2 h-2 rounded-full transition-colors duration-200 ${
-                  index === current ? 'bg-gold' : 'bg-gray-300'
-                }`}
-                onClick={() => api?.scrollTo(index)}
-                aria-label={`Ir para slide ${index + 1}`}
-              />
-            ))}
+          <div className="max-w-6xl mx-auto">
+            <Carousel
+              setApi={setApi}
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-1">
+                {workImages.map((image, index) => (
+                  <CarouselItem key={index} className="pl-1 md:basis-1/2 lg:basis-1/3">
+                    <div className="p-1">
+                      <Card className="cursor-pointer hover:shadow-lg transition-shadow duration-300">
+                        <CardContent className="flex aspect-video items-center justify-center p-0 overflow-hidden rounded-lg">
+                          <img
+                            src={image.src}
+                            alt={image.alt}
+                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                            loading="lazy"
+                            onClick={() => handleImageClick(image)}
+                          />
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Modal for expanded image */}
+      <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
+        <DialogContent className="max-w-4xl max-h-[90vh] p-0">
+          {selectedImage && (
+            <div className="relative">
+              <img
+                src={selectedImage.src}
+                alt={selectedImage.alt}
+                className="w-full h-auto max-h-[85vh] object-contain rounded-lg"
+              />
+              <div className="p-4 bg-background/95 backdrop-blur-sm absolute bottom-0 left-0 right-0 rounded-b-lg">
+                <p className="text-center text-sm text-muted-foreground">
+                  {selectedImage.alt}
+                </p>
+              </div>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
+    </>
   );
 };
 
