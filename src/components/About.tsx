@@ -93,13 +93,13 @@ const About = () => {
             </div>
 
             {/* Proteção */}
-            <div className="flex flex-col md:flex-row-reverse items-center gap-8">
+            <div className="flex flex-col md:flex-row items-center gap-8">
               <div className="flex-shrink-0">
                 <div className="w-20 h-20 bg-gradient-gold rounded-full flex items-center justify-center">
                   <span className="text-2xl font-bold text-navy">P</span>
                 </div>
               </div>
-              <div className="flex-1 md:text-right">
+              <div className="flex-1">
                 <h4 className="text-2xl font-bold text-navy mb-4">Proteção</h4>
                 <p className="text-muted-foreground text-lg leading-relaxed">
                   A Proteção é nossa promessa de segurança e continuidade. Oferecemos um leque completo de serviços de manutenção preventiva - de sistemas de refrigeração e climatização a CFTV, elétrica e hidráulica. Nossa equipe atua de forma proativa, identificando e corrigindo falhas antes que se tornem problemas.
