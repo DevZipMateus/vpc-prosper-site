@@ -84,47 +84,48 @@ const WorkCarousel = () => {
     <>
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
-              Nosso Trabalho em Ação
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Veja nossa equipe especializada executando projetos de infraestrutura com excelência e dedicação
-            </p>
-          </div>
-          
-          <div className="max-w-6xl mx-auto">
-            <Carousel
-              setApi={setApi}
-              opts={{
-                align: "start",
-                loop: true,
-              }}
-              className="w-full"
-            >
-              <CarouselContent className="-ml-1">
-                {workImages.map((image, index) => (
-                  <CarouselItem key={index} className="pl-1 md:basis-1/2 lg:basis-1/3">
-                    <div className="p-1">
-                      <Card className="cursor-pointer hover:shadow-lg transition-shadow duration-300">
-                        <CardContent className="flex aspect-video items-center justify-center p-0 overflow-hidden rounded-lg">
-                          <img
-                            src={image.src}
-                            alt={image.alt}
-                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                            loading="lazy"
-                            onClick={() => handleImageClick(image)}
-                          />
-                        </CardContent>
-                      </Card>
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
-            </Carousel>
-          </div>
+        {/* Section Header */}
+        <div className="text-center mb-12 px-4 sm:px-0">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy mb-4 sm:mb-6">
+            Nosso Trabalho em Ação
+          </h2>
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Veja nossa equipe especializada executando projetos de infraestrutura com excelência e dedicação
+          </p>
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-0">
+          <Carousel
+            setApi={setApi}
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-1">
+              {workImages.map((image, index) => (
+                <CarouselItem key={index} className="pl-1 basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4">
+                  <div className="p-1">
+                    <Card className="cursor-pointer hover:shadow-lg transition-shadow duration-300">
+                      <CardContent className="flex aspect-video items-center justify-center p-0 overflow-hidden rounded-lg">
+                        <img
+                          src={image.src}
+                          alt={image.alt}
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                          loading="lazy"
+                          onClick={() => handleImageClick(image)}
+                        />
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden sm:flex" />
+            <CarouselNext className="hidden sm:flex" />
+          </Carousel>
+        </div>
         </div>
       </section>
 

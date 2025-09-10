@@ -71,26 +71,26 @@ Gostaria de solicitar um orçamento.`;
     <section id="contact" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-navy mb-6">
+        <div className="text-center mb-12 sm:mb-16 px-4 sm:px-0">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy mb-4 sm:mb-6">
             Entre em Contato
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Estamos prontos para oferecer a solução ideal para o seu negócio. Solicite seu orçamento gratuito!
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-start px-4 sm:px-0">
           {/* Contact Form */}
           <Card className="hover-lift">
             <CardHeader>
-              <CardTitle className="text-2xl font-bold text-navy flex items-center">
-                <MessageCircle className="w-6 h-6 mr-2 text-gold" />
+              <CardTitle className="text-xl sm:text-2xl font-bold text-navy flex items-center">
+                <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 mr-2 text-gold" />
                 Solicitar Orçamento
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-navy mb-2">
                     Nome Completo *
@@ -107,7 +107,7 @@ Gostaria de solicitar um orçamento.`;
                   />
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-navy mb-2">
                       E-mail *
@@ -147,7 +147,7 @@ Gostaria de solicitar um orçamento.`;
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-ring"
+                    className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-ring text-sm sm:text-base"
                   >
                     <option value="">Selecione um serviço</option>
                     {services.map((service) => (
@@ -177,9 +177,9 @@ Gostaria de solicitar um orçamento.`;
                 <Button
                   type="submit"
                   variant="outline"
-                  className="w-full bg-transparent border-2 border-gold text-gold hover:bg-gold hover:text-navy font-semibold py-3 text-lg transition-all duration-300"
+                  className="w-full bg-transparent border-2 border-gold text-gold hover:bg-gold hover:text-navy font-semibold py-3 text-base sm:text-lg transition-all duration-300"
                 >
-                  <Send className="w-5 h-5 mr-2" />
+                  <Send className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                   Enviar via WhatsApp
                 </Button>
               </form>
@@ -187,37 +187,37 @@ Gostaria de solicitar um orçamento.`;
           </Card>
 
           {/* Contact Information */}
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             <Card className="bg-gradient-navy-blue text-white hover-lift">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-6 text-gold">
+              <CardContent className="p-6 sm:p-8">
+                <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-gold">
                   Fale Conosco Diretamente
                 </h3>
                 
-                <div className="space-y-6">
+                <div className="space-y-4 sm:space-y-6">
                   <a 
                     href="tel:21967076166"
-                    className="flex items-center space-x-4 p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors"
+                    className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors"
                   >
-                    <div className="w-12 h-12 bg-gold rounded-full flex items-center justify-center">
-                      <Phone className="w-6 h-6 text-navy" />
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gold rounded-full flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-navy" />
                     </div>
                     <div>
-                      <p className="text-blue-light-soft text-sm">Telefone</p>
-                      <p className="text-lg font-semibold">(21) 96707-6166</p>
+                      <p className="text-blue-light-soft text-xs sm:text-sm">Telefone</p>
+                      <p className="text-base sm:text-lg font-semibold">(21) 96707-6166</p>
                     </div>
                   </a>
 
                   <a 
                     href="mailto:grupovpcbrasil@gmail.com"
-                    className="flex items-center space-x-4 p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors"
+                    className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors"
                   >
-                    <div className="w-12 h-12 bg-gold rounded-full flex items-center justify-center">
-                      <Mail className="w-6 h-6 text-navy" />
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gold rounded-full flex items-center justify-center flex-shrink-0">
+                      <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-navy" />
                     </div>
-                    <div>
-                      <p className="text-blue-light-soft text-sm">E-mail</p>
-                      <p className="text-lg font-semibold">grupovpcbrasil@gmail.com</p>
+                    <div className="min-w-0">
+                      <p className="text-blue-light-soft text-xs sm:text-sm">E-mail</p>
+                      <p className="text-base sm:text-lg font-semibold truncate">grupovpcbrasil@gmail.com</p>
                     </div>
                   </a>
 
@@ -225,14 +225,14 @@ Gostaria de solicitar um orçamento.`;
                     href="https://wa.me/5521967076166"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center space-x-4 p-4 bg-gold/20 rounded-lg hover:bg-gold/30 transition-colors"
+                    className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 bg-gold/20 rounded-lg hover:bg-gold/30 transition-colors"
                   >
-                    <div className="w-12 h-12 bg-gold rounded-full flex items-center justify-center">
-                      <MessageCircle className="w-6 h-6 text-navy" />
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gold rounded-full flex items-center justify-center flex-shrink-0">
+                      <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 text-navy" />
                     </div>
                     <div>
-                      <p className="text-blue-light-soft text-sm">WhatsApp</p>
-                      <p className="text-lg font-semibold text-gold">Atendimento 24h</p>
+                      <p className="text-blue-light-soft text-xs sm:text-sm">WhatsApp</p>
+                      <p className="text-base sm:text-lg font-semibold text-gold">Atendimento 24h</p>
                     </div>
                   </a>
                 </div>
@@ -241,9 +241,9 @@ Gostaria de solicitar um orçamento.`;
 
             {/* Business Hours */}
             <Card className="hover-lift">
-              <CardContent className="p-8">
-                <h3 className="text-xl font-bold text-navy mb-4">Horário de Atendimento</h3>
-                <div className="space-y-2 text-muted-foreground">
+              <CardContent className="p-6 sm:p-8">
+                <h3 className="text-lg sm:text-xl font-bold text-navy mb-3 sm:mb-4">Horário de Atendimento</h3>
+                <div className="space-y-2 text-muted-foreground text-sm sm:text-base">
                   <div className="flex justify-between">
                     <span>Segunda à Sexta:</span>
                     <span className="font-medium">8h às 18h</span>
@@ -262,9 +262,9 @@ Gostaria de solicitar um orçamento.`;
 
             {/* Service Guarantee */}
             <Card className="bg-muted hover-lift">
-              <CardContent className="p-8 text-center">
-                <h3 className="text-xl font-bold text-navy mb-4">Nossa Garantia</h3>
-                <p className="text-muted-foreground">
+              <CardContent className="p-6 sm:p-8 text-center">
+                <h3 className="text-lg sm:text-xl font-bold text-navy mb-3 sm:mb-4">Nossa Garantia</h3>
+                <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
                   Resposta em até <strong className="text-navy">2 horas</strong> para solicitações de orçamento e <strong className="text-navy">atendimento 24h</strong> para emergências.
                 </p>
               </CardContent>

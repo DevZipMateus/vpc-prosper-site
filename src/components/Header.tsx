@@ -35,18 +35,20 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg transition-all duration-300">
       {/* Top Contact Bar */}
       <div className="bg-navy text-white py-2 px-4">
-        <div className="container mx-auto flex justify-between items-center text-sm">
-          <div className="flex items-center gap-4">
+        <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center text-xs sm:text-sm gap-2 sm:gap-4">
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
             <a href="tel:21967076166" className="flex items-center gap-1 hover:text-gold transition-colors">
-              <Phone size={14} />
-              <span>(21) 96707-6166</span>
+              <Phone size={12} className="sm:hidden" />
+              <Phone size={14} className="hidden sm:block" />
+              <span className="text-xs sm:text-sm">(21) 96707-6166</span>
             </a>
             <a href="mailto:grupovpcbrasil@gmail.com" className="flex items-center gap-1 hover:text-gold transition-colors">
-              <Mail size={14} />
-              <span>grupovpcbrasil@gmail.com</span>
+              <Mail size={12} className="sm:hidden" />
+              <Mail size={14} className="hidden sm:block" />
+              <span className="text-xs sm:text-sm truncate">grupovpcbrasil@gmail.com</span>
             </a>
           </div>
-          <div className="hidden md:block text-gold font-medium">
+          <div className="hidden lg:block text-gold font-medium text-sm">
             VPC Brasil: Construindo o amanhã, hoje.
           </div>
         </div>
