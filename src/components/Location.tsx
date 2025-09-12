@@ -28,7 +28,7 @@ const Location = () => {
                   <div>
                     <h3 className="text-xl font-bold text-navy mb-2">Endereço</h3>
                     <p className="text-muted-foreground text-lg">
-                      Rua Coronel Leoncio, 398<br />
+                      Rua Daniel Torres, 584<br />
                       Engenhoca - Niterói, RJ
                     </p>
                   </div>
